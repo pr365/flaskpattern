@@ -1,0 +1,12 @@
+{% extends 'layout.html' %} {% block body %}
+<div id="indexPage" class="mb-4">
+    <h1 class="h3 border-bottom mb-4">Welcome to our site!</h1>
+    <p class="mt-5 mb-3 text-muted">Please select from the options below.</p>
+    <form id="add" action="/add_record">
+        <input class="btn btn-outline-info" id="index" type="submit" value="Add Record">
+    </form><br>
+    <form id="display" action="/display_records">
+        <input class="btn btn-outline-info" id="index" type="submit" value="Display Database">
+    </form><br>
+    <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
+</div> {% endblock %}

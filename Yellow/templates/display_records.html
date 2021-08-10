@@ -1,0 +1,31 @@
+{% extends "layout.html" %} {% block body %}
+<div id=resultPage class="jumbotron">
+    <table border=1>
+        <thead>
+            <td>Company</td>
+            <td>Email</td>
+            <td>Phone</td>
+            <td>Address</td>
+            <td>City</td>
+            <td>State</td>
+            <td>Zip</td>
+            <td>Update</td>
+            <td>Delete</td>
+        </thead>
+
+        {% for record in Records %}
+        <tr>
+            <td>{{record.companyname}}</td>
+            <td>{{record.email}}</td>
+            <td>{{record.phone}}</td>
+            <td>{{record.address}}</td>
+            <td>{{record.city}}</td>
+            <td>{{record.state}}</td>
+            <td>{{record.zip}}</td>
+            <td><a class="mr-2 " href="{{ url_for( 'update_record', record_id = record.id) }} ">Click to Update</a></td>
+            <td><a class="mr-2 " href="{{ url_for( 'delete_record', record_id = record.id) }}">Delete from Database</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
